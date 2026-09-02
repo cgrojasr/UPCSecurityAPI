@@ -1,0 +1,318 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "UPCSecurityAPI/1.0.0": {
+        "dependencies": {
+          "BCrypt.Net-Next": "4.0.3",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.7",
+          "Microsoft.AspNetCore.OpenApi": "10.0.7",
+          "MongoDB.Driver": "3.5.1",
+          "System.IdentityModel.Tokens.Jwt": "8.13.0"
+        },
+        "runtime": {
+          "UPCSecurityAPI.dll": {}
+        }
+      },
+      "BCrypt.Net-Next/4.0.3": {
+        "runtime": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.0.3.0"
+          }
+        }
+      },
+      "DnsClient/1.6.1": {
+        "runtime": {
+          "lib/net5.0/DnsClient.dll": {
+            "assemblyVersion": "1.6.1.0",
+            "fileVersion": "1.6.1.0"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.7": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "8.0.1"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "assemblyVersion": "10.0.7.0",
+            "fileVersion": "10.0.726.21808"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.OpenApi/10.0.7": {
+        "dependencies": {
+          "Microsoft.OpenApi": "2.0.0"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
+            "assemblyVersion": "10.0.7.0",
+            "fileVersion": "10.0.726.21808"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Abstractions/8.13.0": {
+        "runtime": {
+          "lib/net9.0/Microsoft.IdentityModel.Abstractions.dll": {
+            "assemblyVersion": "8.13.0.0",
+            "fileVersion": "8.13.0.60721"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.JsonWebTokens/8.13.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "8.13.0"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
+            "assemblyVersion": "8.13.0.0",
+            "fileVersion": "8.13.0.60721"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Logging/8.13.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Abstractions": "8.13.0"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.IdentityModel.Logging.dll": {
+            "assemblyVersion": "8.13.0.0",
+            "fileVersion": "8.13.0.60721"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Protocols/8.0.1": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "8.13.0"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.IdentityModel.Protocols.dll": {
+            "assemblyVersion": "8.0.1.0",
+            "fileVersion": "8.0.1.50722"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Protocols.OpenIdConnect/8.0.1": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols": "8.0.1",
+          "System.IdentityModel.Tokens.Jwt": "8.13.0"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {
+            "assemblyVersion": "8.0.1.0",
+            "fileVersion": "8.0.1.50722"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Tokens/8.13.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "8.13.0"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.IdentityModel.Tokens.dll": {
+            "assemblyVersion": "8.13.0.0",
+            "fileVersion": "8.13.0.60721"
+          }
+        }
+      },
+      "Microsoft.OpenApi/2.0.0": {
+        "runtime": {
+          "lib/net8.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "MongoDB.Bson/3.5.1": {
+        "runtime": {
+          "lib/net6.0/MongoDB.Bson.dll": {
+            "assemblyVersion": "3.5.1.0",
+            "fileVersion": "3.5.1.0"
+          }
+        }
+      },
+      "MongoDB.Driver/3.5.1": {
+        "dependencies": {
+          "DnsClient": "1.6.1",
+          "MongoDB.Bson": "3.5.1",
+          "SharpCompress": "0.30.1",
+          "Snappier": "1.0.0",
+          "ZstdSharp.Port": "0.7.3"
+        },
+        "runtime": {
+          "lib/net6.0/MongoDB.Driver.dll": {
+            "assemblyVersion": "3.5.1.0",
+            "fileVersion": "3.5.1.0"
+          }
+        }
+      },
+      "SharpCompress/0.30.1": {
+        "runtime": {
+          "lib/net5.0/SharpCompress.dll": {
+            "assemblyVersion": "0.30.1.0",
+            "fileVersion": "0.30.1.0"
+          }
+        }
+      },
+      "Snappier/1.0.0": {
+        "runtime": {
+          "lib/net5.0/Snappier.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "System.IdentityModel.Tokens.Jwt/8.13.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "8.13.0",
+          "Microsoft.IdentityModel.Tokens": "8.13.0"
+        },
+        "runtime": {
+          "lib/net9.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "assemblyVersion": "8.13.0.0",
+            "fileVersion": "8.13.0.60721"
+          }
+        }
+      },
+      "ZstdSharp.Port/0.7.3": {
+        "runtime": {
+          "lib/net7.0/ZstdSharp.dll": {
+            "assemblyVersion": "0.7.3.0",
+            "fileVersion": "0.7.3.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UPCSecurityAPI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BCrypt.Net-Next/4.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
+      "path": "bcrypt.net-next/4.0.3",
+      "hashPath": "bcrypt.net-next.4.0.3.nupkg.sha512"
+    },
+    "DnsClient/1.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4H/f2uYJOZ+YObZjpY9ABrKZI+JNw3uizp6oMzTXwDw6F+2qIPhpRl/1t68O/6e98+vqNiYGu+lswmwdYUy3gg==",
+      "path": "dnsclient/1.6.1",
+      "hashPath": "dnsclient.1.6.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-g8klpd7OFJfJOq1EJKcBO8C8I8Dp0QUWoKDPUvvJYe+xunVyBHq6YxfF2CAc6+rkniV25iaWl+6RK87c25n4lA==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/10.0.7",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.10.0.7.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.OpenApi/10.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vKiAcGXG0BwNVw3bOjjWRLnp9tR18dR7MiwpvC94h0yFS+zfnzGHzS/JmmgwUdRixrGxrlIMRAWrVc+2DfAGlg==",
+      "path": "microsoft.aspnetcore.openapi/10.0.7",
+      "hashPath": "microsoft.aspnetcore.openapi.10.0.7.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Abstractions/8.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gHTIONGSrGAMu6QdUoXsqC7d+sZ3WUHuaMOxpI0SjeMrQsR1kkd5KakpG6UMl1QNFyzctWUCloC5wsG8keDkyQ==",
+      "path": "microsoft.identitymodel.abstractions/8.13.0",
+      "hashPath": "microsoft.identitymodel.abstractions.8.13.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.JsonWebTokens/8.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aWSosjvr4cZPqknW+8+6fs0HzD/lAIDFFtI5ajcrxI5CcCg2+YacpPi03oA+prl4sSuh16+HuI/oYq9ZgdlPqA==",
+      "path": "microsoft.identitymodel.jsonwebtokens/8.13.0",
+      "hashPath": "microsoft.identitymodel.jsonwebtokens.8.13.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Logging/8.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ydRP1oDvel5JbuVL2UPWHbXEhECaBmbl7/SPx6J0UeEEiassy62glDyWXNKyKS/gb1MrWp5/Y2TQKEtBDXwPuQ==",
+      "path": "microsoft.identitymodel.logging/8.13.0",
+      "hashPath": "microsoft.identitymodel.logging.8.13.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Protocols/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uA2vpKqU3I2mBBEaeJAWPTjT9v1TZrGWKdgK6G5qJd03CLx83kdiqO9cmiK8/n1erkHzFBwU/RphP83aAe3i3g==",
+      "path": "microsoft.identitymodel.protocols/8.0.1",
+      "hashPath": "microsoft.identitymodel.protocols.8.0.1.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Protocols.OpenIdConnect/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AQDbfpL+yzuuGhO/mQhKNsp44pm5Jv8/BI4KiFXR7beVGZoSH35zMV3PrmcfvSTsyI6qrcR898NzUauD6SRigg==",
+      "path": "microsoft.identitymodel.protocols.openidconnect/8.0.1",
+      "hashPath": "microsoft.identitymodel.protocols.openidconnect.8.0.1.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Tokens/8.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-25zE+hhKJTOUPh5lxAeHgHiNPDYsPo3iJHd2JVKTalFqMJChJvOkrB5+9PsgKiNm7TpB9h2l6h4AbAl0D3H7OA==",
+      "path": "microsoft.identitymodel.tokens/8.13.0",
+      "hashPath": "microsoft.identitymodel.tokens.8.13.0.nupkg.sha512"
+    },
+    "Microsoft.OpenApi/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GGYLfzV/G/ct80OZ45JxnWP7NvMX1BCugn/lX7TH5o0lcVaviavsLMTxmFV2AybXWjbi3h6FF1vgZiTK6PXndw==",
+      "path": "microsoft.openapi/2.0.0",
+      "hashPath": "microsoft.openapi.2.0.0.nupkg.sha512"
+    },
+    "MongoDB.Bson/3.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7+ZYBqOqzkzx/BK+vT47aFRpLxrTNw6pTV9uv2lOAQbAIpXjUpkJ/4pSs9dhJxnnryuSu4GskYW0xzy071U6og==",
+      "path": "mongodb.bson/3.5.1",
+      "hashPath": "mongodb.bson.3.5.1.nupkg.sha512"
+    },
+    "MongoDB.Driver/3.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p++X0PJOAeSJKavNnoc+P8mnLt4YOD7Sv5wIruKGVPDf3MyNAOKh0gcwrOBLJklByV+fKfKVsMIZkeVXGvtE9w==",
+      "path": "mongodb.driver/3.5.1",
+      "hashPath": "mongodb.driver.3.5.1.nupkg.sha512"
+    },
+    "SharpCompress/0.30.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XqD4TpfyYGa7QTPzaGlMVbcecKnXy4YmYLDWrU+JIj7IuRNl7DH2END+Ll7ekWIY8o3dAMWLFDE1xdhfIWD1nw==",
+      "path": "sharpcompress/0.30.1",
+      "hashPath": "sharpcompress.0.30.1.nupkg.sha512"
+    },
+    "Snappier/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rFtK2KEI9hIe8gtx3a0YDXdHOpedIf9wYCEYtBEmtlyiWVX3XlCNV03JrmmAi/Cdfn7dxK+k0sjjcLv4fpHnqA==",
+      "path": "snappier/1.0.0",
+      "hashPath": "snappier.1.0.0.nupkg.sha512"
+    },
+    "System.IdentityModel.Tokens.Jwt/8.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GA3moxioWoF/lzRRGNjz+7LD91tajHvS4S6zn3Y3G1p/Koes7pj6gZIt4rzGhe4iIn4rvdj9wxpmN6quObgfMw==",
+      "path": "system.identitymodel.tokens.jwt/8.13.0",
+      "hashPath": "system.identitymodel.tokens.jwt.8.13.0.nupkg.sha512"
+    },
+    "ZstdSharp.Port/0.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-U9Ix4l4cl58Kzz1rJzj5hoVTjmbx1qGMwzAcbv1j/d3NzrFaESIurQyg+ow4mivCgkE3S413y+U9k4WdnEIkRA==",
+      "path": "zstdsharp.port/0.7.3",
+      "hashPath": "zstdsharp.port.0.7.3.nupkg.sha512"
+    }
+  }
+}

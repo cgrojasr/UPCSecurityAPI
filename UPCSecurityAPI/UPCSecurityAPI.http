@@ -1,0 +1,70 @@
+@UPCSecurityAPI_HostAddress = http://localhost:5287
+
+POST {{UPCSecurityAPI_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+	"email": "cgrojasr@gmail.com",
+	"password": "Abc12345!"
+}
+
+###
+
+POST {{UPCSecurityAPI_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+	"email": "cgrojasr@gmail.com",
+	"password": "Abc12345!"
+}
+
+###
+
+@accessToken = REEMPLAZAR_CON_TOKEN_JWT
+
+GET {{UPCSecurityAPI_HostAddress}}/api/SecureResource/profile
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+
+###
+
+GET {{UPCSecurityAPI_HostAddress}}/api/SecureResource/admin/dashboard
+Authorization: Bearer {{accessToken}}
+Accept: application/json
+
+###
+
+GET {{UPCSecurityAPI_HostAddress}}/api/SecureResource/profile
+Accept: application/json
+
+###
+
+POST {{UPCSecurityAPI_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+	"email": "cgrojasr@gmail.com",
+	"password": "Incorrecta123"
+}
+
+###
+
+POST {{UPCSecurityAPI_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+	"email": "email-invalido",
+	"password": ""
+}
+
+###
+
+POST {{UPCSecurityAPI_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+	"email": "cgrojasr@gmail.com",
+	"password": "Abc12345!"
+}
+
+###
