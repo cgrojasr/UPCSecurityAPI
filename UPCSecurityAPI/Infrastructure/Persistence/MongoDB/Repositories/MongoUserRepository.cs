@@ -30,6 +30,29 @@ public class MongoUserRepository : IUserRepository
         return document is null ? null : MapToDomain(document);
     }
 
+    public async Task<User?> GetByNroDocumentoAsync(string nroDocumento, CancellationToken cancellationToken = default)
+    {
+        var trimmedNroDocumento = (nroDocumento ?? string.Empty).Trim();
+
+        var document = await _users
+            .Find(user => user.NroDocumento == trimmedNroDocumento)
+            .FirstOrDefaultAsync(cancellationToken);
+
+        return document is null ? null : MapToDomain(document);
+    }
+
+    public async Task<User?> GetByEmailOrNroDocumentoAsync(string identifier, CancellationToken cancellationToken = default)
+    {
+        var normalizedIdentifier = (identifier ?? string.Empty).Trim().ToLowerInvariant();
+        var trimmedIdentifier = (identifier ?? string.Empty).Trim();
+
+        var document = await _users
+            .Find(user => user.NormalizedEmail == normalizedIdentifier || user.NroDocumento == trimmedIdentifier)
+            .FirstOrDefaultAsync(cancellationToken);
+
+        return document is null ? null : MapToDomain(document);
+    }
+
     public async Task CreateAsync(User user, CancellationToken cancellationToken = default)
     {
         var document = MapToDocument(user);
@@ -51,10 +74,15 @@ public class MongoUserRepository : IUserRepository
                 return;
             }
 
-            var indexKeys = Builders<UserDocument>.IndexKeys.Ascending(user => user.Email);
-            var indexOptions = new CreateIndexOptions { Name = "ux_users_email", Unique = true };
-            var indexModel = new CreateIndexModel<UserDocument>(indexKeys, indexOptions);
-            _users.Indexes.CreateOne(indexModel);
+            var emailIndexKeys = Builders<UserDocument>.IndexKeys.Ascending(user => user.NormalizedEmail);
+            var emailIndexOptions = new CreateIndexOptions { Name = "ux_users_normalized_email", Unique = true };
+            var emailIndexModel = new CreateIndexModel<UserDocument>(emailIndexKeys, emailIndexOptions);
+
+            var nroDocumentoIndexKeys = Builders<UserDocument>.IndexKeys.Ascending(user => user.NroDocumento);
+            var nroDocumentoIndexOptions = new CreateIndexOptions { Name = "ux_users_nro_documento", Unique = true };
+            var nroDocumentoIndexModel = new CreateIndexModel<UserDocument>(nroDocumentoIndexKeys, nroDocumentoIndexOptions);
+
+            _users.Indexes.CreateMany([emailIndexModel, nroDocumentoIndexModel]);
             _indexesCreated = true;
         }
     }
@@ -66,10 +94,11 @@ public class MongoUserRepository : IUserRepository
         return new UserDocument
         {
             Id = string.IsNullOrWhiteSpace(user.Id) ? ObjectId.GenerateNewId().ToString() : user.Id,
-            Email = user.Email,
+            Email = user.Email ?? string.Empty,
+            NroDocumento = user.NroDocumento ?? string.Empty,
             NormalizedEmail = normalizedEmail,
-            PasswordHash = user.PasswordHash,
-            Role = user.Role,
+            PasswordHash = user.PasswordHash ?? string.Empty,
+            Role = user.Role ?? "User",
             CreatedAt = user.CreatedAt
         };
     }
@@ -78,10 +107,11 @@ public class MongoUserRepository : IUserRepository
     {
         return new User
         {
-            Id = document.Id,
-            Email = document.Email,
-            PasswordHash = document.PasswordHash,
-            Role = document.Role,
+            Id = document.Id ?? string.Empty,
+            Email = document.Email ?? string.Empty,
+            NroDocumento = document.NroDocumento ?? string.Empty,
+            PasswordHash = document.PasswordHash ?? string.Empty,
+            Role = document.Role ?? "User",
             CreatedAt = document.CreatedAt
         };
     }

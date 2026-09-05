@@ -7,4 +7,6 @@ public class RegisterUserResponseDto
     public string UserId { get; set; } = string.Empty;
 
     public string Email { get; set; } = string.Empty;
+
+    public string NroDocumento { get; set; } = string.Empty;
 }

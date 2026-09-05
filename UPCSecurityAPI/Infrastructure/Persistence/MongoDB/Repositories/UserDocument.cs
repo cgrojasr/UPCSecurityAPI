@@ -12,6 +12,9 @@ public class UserDocument
     [BsonElement("email")]
     public string Email { get; set; } = string.Empty;
 
+    [BsonElement("nroDocumento")]
+    public string NroDocumento { get; set; } = string.Empty;
+
     [BsonElement("normalizedEmail")]
     public string NormalizedEmail { get; set; } = string.Empty;
 

@@ -22,21 +22,30 @@ public class AuthService : IAuthService
     public async Task<RegisterUserResponseDto> RegisterAsync(RegisterUserRequestDto request, CancellationToken cancellationToken = default)
     {
         var email = (request.Email?.Trim() ?? string.Empty).ToLowerInvariant();
+        var nroDocumento = request.NroDocumento?.Trim() ?? string.Empty;
         var password = request.Password ?? string.Empty;
 
-        ValidateRequest(email, password);
+        ValidateRequest(email, nroDocumento, password);
 
         var existingUser = await _userRepository.GetByEmailAsync(email, cancellationToken);
 
         if (existingUser is not null)
         {
-            throw new ResourceConflictException("El usuario ya existe.");
+            throw new ResourceConflictException("El email ya existe.");
+        }
+
+        var existingDocumentUser = await _userRepository.GetByNroDocumentoAsync(nroDocumento, cancellationToken);
+
+        if (existingDocumentUser is not null)
+        {
+            throw new ResourceConflictException("El NroDocumento ya existe.");
         }
 
         var passwordHash = BCrypt.Net.BCrypt.HashPassword(password, workFactor: 12);
         var user = new User
         {
             Email = email,
+            NroDocumento = nroDocumento,
             PasswordHash = passwordHash,
             Role = "User",
             CreatedAt = DateTime.UtcNow
@@ -48,18 +57,19 @@ public class AuthService : IAuthService
         {
             Message = "Usuario registrado exitosamente.",
             UserId = user.Id,
-            Email = user.Email
+            Email = user.Email,
+            NroDocumento = user.NroDocumento
         };
     }
 
     public async Task<LoginResponseDto> LoginAsync(LoginRequestDto request, CancellationToken cancellationToken = default)
     {
-        var email = (request.Email?.Trim() ?? string.Empty).ToLowerInvariant();
+        var identifier = request.Identifier?.Trim() ?? string.Empty;
         var password = request.Password ?? string.Empty;
 
-        ValidateLoginRequest(email, password);
+        ValidateLoginRequest(identifier, password);
 
-        var user = await _userRepository.GetByEmailAsync(email, cancellationToken);
+        var user = await _userRepository.GetByEmailOrNroDocumentoAsync(identifier, cancellationToken);
 
         if (user is null || !BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
         {
@@ -76,7 +86,7 @@ public class AuthService : IAuthService
         };
     }
 
-    private static void ValidateRequest(string email, string password)
+    private static void ValidateRequest(string email, string nroDocumento, string password)
     {
         var errors = new Dictionary<string, string[]>();
 
@@ -93,19 +103,28 @@ public class AuthService : IAuthService
             ];
         }
 
+        if (string.IsNullOrWhiteSpace(nroDocumento))
+        {
+            errors["nroDocumento"] = ["El NroDocumento es requerido."];
+        }
+
         if (errors.Count > 0)
         {
             throw new AppValidationException(errors);
         }
     }
 
-    private static void ValidateLoginRequest(string email, string password)
+    private static void ValidateLoginRequest(string identifier, string password)
     {
         var errors = new Dictionary<string, string[]>();
 
-        if (!IsValidEmail(email))
+        if (string.IsNullOrWhiteSpace(identifier))
         {
-            errors["email"] = ["El email es inválido."];
+            errors["identifier"] = ["Debe ingresar email o NroDocumento."];
+        }
+        else if (identifier.Contains('@') && !IsValidEmail(identifier))
+        {
+            errors["identifier"] = ["El email es inválido."];
         }
 
         if (string.IsNullOrWhiteSpace(password))

@@ -46,3 +46,4 @@
 /Users/genaro/Documents/Development/NET Core/UPCSecurityAPI/UPCSecurityAPI/bin/Debug/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/genaro/Documents/Development/NET Core/UPCSecurityAPI/UPCSecurityAPI/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.dll
 /Users/genaro/Documents/Development/NET Core/UPCSecurityAPI/UPCSecurityAPI/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/genaro/Documents/Development/NET Core/UPCSecurityAPI/UPCSecurityAPI/obj/Debug/net10.0/UPCSecurityAPI.sourcelink.json
