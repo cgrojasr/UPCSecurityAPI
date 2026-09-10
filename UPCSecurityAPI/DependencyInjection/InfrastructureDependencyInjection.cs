@@ -17,6 +17,9 @@ public static class InfrastructureDependencyInjection
 
         services.AddSingleton<IMongoDbAdapter, MongoDbAdapter>();
         services.AddScoped<IUserRepository, MongoUserRepository>();
+        services.AddScoped<IRegionRepository, MongoRegionRepository>();
+        services.AddScoped<IProvinciaRepository, MongoProvinciaRepository>();
+        services.AddScoped<IDistritoRepository, MongoDistritoRepository>();
         services.AddScoped<IJwtTokenBuilder, JwtTokenBuilder>();
 
         return services;

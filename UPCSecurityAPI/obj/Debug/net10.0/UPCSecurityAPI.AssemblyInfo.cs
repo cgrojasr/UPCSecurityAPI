@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UPCSecurityAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92c31732d7dc4df568844eda31401139b72c24a1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+268ffb73f618544a8dd08eef00f41252daed5350")]
 [assembly: System.Reflection.AssemblyProductAttribute("UPCSecurityAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UPCSecurityAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
